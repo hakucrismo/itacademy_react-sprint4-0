@@ -1,7 +1,6 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   let result = array.map( (movie) => movie.director );
-  console.log("EXERCICE 1 ->", result);
   return result;
 }
 
@@ -15,17 +14,18 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   let directorMovies = getMoviesFromDirector(array, director);
   let totalScore = 0;
-  let avegareScore = 0; 
+  let avegareScore = 0;
+  let scoresArray = [];
 
-  totalScore = directorMovies.reduce( 
-    (acumulatedScore, actualScore) => acumulatedScore += actualScore, 0 );
+  scoresArray = directorMovies.map( (pelicula) => pelicula.score); 
+  totalScore = scoresArray.reduce( (acumulatedScore, actualScore) => acumulatedScore += actualScore, 0 );
   avegareScore = totalScore / directorMovies.length;
-  return parseInt(avegareScore.toFixed(2));
+  return avegareScore;
 } 
 
 // Exercise 4:  Alphabetic order by title 
-function orderAlphabetically(array) {
-  
+function orderAlphabetically(array) { 
+
 }
 
 // Exercise 5: Order by year, ascending
